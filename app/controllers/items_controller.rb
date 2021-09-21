@@ -12,11 +12,14 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @lista = Listum.find(params[:lista_id])
+    # @item = Item.new
+    @item = @lista.items.build
   end
 
   # GET /items/1/edit
   def edit
+    @item = Item.find(params[:id])
   end
 
   # POST /items or /items.json
@@ -64,6 +67,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:nome, :preco, :quantidade)
+      params.require(:item).permit(:nome, :preco, :quantidade, :lista_id)
     end
 end
