@@ -1,7 +1,7 @@
 <%= form_with(model: listum) do |form| %>
   <% if listum.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(listum.errors.count, "error") %> prohibited this listum from being saved:</h2>
+      <h2><%= pluralize(listum.errors.count, "error") %> Este item não pode ser salvo:</h2>
 
       <ul>
         <% listum.errors.each do |error| %>

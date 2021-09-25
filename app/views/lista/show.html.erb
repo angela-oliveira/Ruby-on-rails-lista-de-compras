@@ -4,6 +4,18 @@
   <strong>Nome:</strong>
   <%= @listum.nome %>
 </p>
+<% items = @listum.items %>
+<h4>Items:</h4>
+<% if !items.any? %>
+  <%= "<p>-empty-</p>".html_safe %>
+<% else %>
+  <ul>
+    <% items.each do |item| %>
+      <li><%= item.quantidade %> <%= item.nome %> <%= link_to 'Remove', listum_item_path(@lista, item), method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></li>
+    <% end %>
+  </ul>
+<% end %>
+  <p class="add-item-button"><%= link_to 'Adicionar Item', new_listum_item_path(@lista) %></p>
 
-<%= link_to 'Edit', edit_listum_path(@listum) %> |
-<%= link_to 'Back', lista_path %>
+<%= link_to 'Editar', edit_listum_path(@listum) %> |
+<%= link_to 'Voltar', lista_path %>
