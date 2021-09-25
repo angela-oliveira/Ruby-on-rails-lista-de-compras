@@ -1,11 +1,12 @@
-<%= form_with(model: item) do |form| %>
-  <% if item.errors.any? %>
+<%# <%= form_with(model: item) do |form| %> %>
+<%= form_for [@lista, @item] do |form| %>
+  <% if @item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h2><%= pluralize(@item.errors.count, "error") %> Este item não pode ser salvo:</h2>
 
       <ul>
-        <% item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>

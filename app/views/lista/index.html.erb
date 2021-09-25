@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista</h1>
+<h1>Listas</h1>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
     <% @lista.each do |listum| %>
       <tr>
         <td><%= listum.nome %></td>
-        <td><%= link_to 'Show', listum %></td>
-        <td><%= link_to 'Edit', edit_listum_path(listum) %></td>
-        <td><%= link_to 'Destroy', listum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalhes', listum %></td>
+        <td><%= link_to 'Editar', edit_listum_path(listum) %></td>
+        <td><%= link_to 'Deletar', listum, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Listum', new_listum_path %>
+<%= link_to 'Nova Lista', new_listum_path %>
