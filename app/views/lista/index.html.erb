@@ -1,6 +1,10 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
-
-<h1>Listas</h1>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Minhas Listas</a>
+    </div>
+  </nav>
 
 <table>
   <thead>
@@ -14,14 +18,20 @@
     <% @lista.each do |listum| %>
       <tr>
         <td><%= listum.nome %></td>
-        <td><%= link_to 'Detalhes', listum %></td>
-        <td><%= link_to 'Editar', edit_listum_path(listum) %></td>
-        <td><%= link_to 'Deletar', listum, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
+        <td class="right-align" >
+          <%= link_to '<i class="material-icons">visibility</i>'.html_safe, listum %>
+          <%= link_to '<i class="material-icons">edit</i>'.html_safe, edit_listum_path(listum) %>
+          <%= link_to '<i class="material-icons">delete</i>'.html_safe, listum, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+    <%# <%= link_to 'Nova Lista', new_listum_path %>
+    
+  <a class="btn" href="<%= new_listum_path %>">Nova Lista<i class="material-icons">add</i></a>
 
-<%= link_to 'Nova Lista', new_listum_path %>
+
+
+</div>

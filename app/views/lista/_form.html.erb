@@ -1,3 +1,7 @@
+   <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
+
 <%= form_with(model: listum) do |form| %>
   <% if listum.errors.any? %>
     <div id="error_explanation">
@@ -17,6 +21,11 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Enviar %>
   </div>
 <% end %>
+
+      </div>
+      <div class="col s4"></div>
+    </div>
+          

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'lista/index'
   root to: 'lista#index'
 
   resources :lista do
