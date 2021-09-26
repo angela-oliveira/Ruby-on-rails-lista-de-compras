@@ -1,21 +1,57 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Nome:</strong>
+  <nav>
+    <div class="brand-logo center nav-wrapper">
+
+  <strong>Lista</strong>
   <%= @listum.nome %>
-</p>
+
+    
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
 <% items = @listum.items %>
-<h4>Items:</h4>
 <% if !items.any? %>
-  <%= "<p>-empty-</p>".html_safe %>
+  <%= "<p>-Lista Vazia-</p>".html_safe %>
 <% else %>
-  <ul>
-    <% items.each do |item| %>
-      <li><%= item.quantidade %> <%= item.nome %> <%= link_to 'Remove', listum_item_path(@lista, item), method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></li>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Preco</th>
+      <th>Quantidade</th>
+      <th>Preço Total</th>
+      <th colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% items.each do |item| %>
+    <tr>
+      <td><%= item.nome %></td>
+        <td><%= item.preco %></td>
+        <td><%= item.quantidade %></td>
+        <td></td>
+
+        <td><%= link_to 'Remover', listum_item_path(@lista, item), method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
+    </tr>
     <% end %>
-  </ul>
+  </tbody>
+</table>
+<table>
+  <tbody>
+  <td><b>Valor final</b></td>
+  <td class="right-align">123</td>
+  </tbody>
+</table>
 <% end %>
   <p class="add-item-button"><%= link_to 'Adicionar Item', new_listum_item_path(@lista) %></p>
 
-<%= link_to 'Editar', edit_listum_path(@listum) %> |
+<%= link_to 'Editar Lista', edit_listum_path(@listum) %> |
 <%= link_to 'Voltar', lista_path %>
+</div>

@@ -1,4 +1,7 @@
-<%# <%= form_with(model: item) do |form| %> %>
+<%# <%= form_with(model: item) do |form| %>
+   <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
 <%= form_for [@lista, @item] do |form| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -28,6 +31,11 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Enviar %>
   </div>
 <% end %>
+
+      </div>
+      <div class="col s4"></div>
+    </div>
+          
