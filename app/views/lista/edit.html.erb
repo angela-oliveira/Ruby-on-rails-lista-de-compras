@@ -11,6 +11,7 @@
   <br>
 <%= render 'form', listum: @listum %>
 
-<%= link_to 'Detalhes', @listum %> |
-<%= link_to 'Voltar', lista_path %>
+
+  <a class="btn orange accent-1" href="<%= lista_path  %>">Voltar</a>
+<%= link_to 'Detalhes', @listum %> 
 </div>
