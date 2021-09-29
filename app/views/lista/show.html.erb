@@ -10,6 +10,7 @@
     </div>
   </nav>
   <br>
+  <a class="btn" href="<%= lista_path %>">Voltar</a>
   <br>
   <br>
 <% items = @listum.items %>
@@ -48,8 +49,7 @@
   </tbody>
 </table>
 <% end %>
-  <p class="add-item-button"><%= link_to 'Adicionar Item', new_listum_item_path(@lista) %></p>
+    <a class="btn deep-orange accent-1" href="<%= edit_listum_path(@listum) %>">Editar Lista</a>
 
-<%= link_to 'Editar Lista', edit_listum_path(@listum) %> |
-<%= link_to 'Voltar', lista_path %>
+  <a class="btn orange accent-1" href="<%= new_listum_item_path(@lista)  %>">Adicionar Item</a>
 </div>
