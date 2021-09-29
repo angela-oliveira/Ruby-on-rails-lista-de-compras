@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_005929) do
     t.string "nome"
     t.float "preco"
     t.integer "quantidade"
+    t.float "total"
     t.integer "listum_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_09_21_005929) do
 
   create_table "lista", force: :cascade do |t|
     t.string "nome"
+    t.float "subtotal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

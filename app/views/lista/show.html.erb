@@ -36,7 +36,7 @@
       <td><%= item.nome %></td>
         <td><%= item.preco %></td>
         <td><%= item.quantidade %></td>
-        <td></td>
+        <td>R$ <%= item.total %></td>
 
         <td><%= link_to 'Remover', listum_item_path(@lista, item), method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' } %></td>
     </tr>
@@ -46,7 +46,7 @@
 <table>
   <tbody>
   <td><b>Valor final</b></td>
-  <td class="right-align">123</td>
+  <td class="right-align">R$ <%= @listum.subtotal %></td>
   </tbody>
 </table>
 <% end %>
